@@ -1,0 +1,210 @@
+:root {
+    --theme-transition: 0.3s ease-in-out;
+}
+
+[data-bs-theme="light"] {
+    --bg-color: #FFFFFF;
+    --text-color: #1F2937;
+    --accent-color: #3B82F6;
+    --card-bg: #f8f9fa;
+    --button-bg: #e9ecef;
+    --button-hover: #dee2e6;
+    --button-text: #000000;
+    --success-color: #059669;
+    --error-color: #DC2626;
+    --muted-text: #4B5563;
+}
+
+[data-bs-theme="dark"] {
+    --bg-color: #1F2937;
+    --text-color: #FFFFFF;
+    --accent-color: #3B82F6;
+    --card-bg: #111827;
+    --button-bg: #374151;
+    --button-hover: #4B5563;
+    --button-text: #FFFFFF;
+    --success-color: #10B981;
+    --error-color: #EF4444;
+    --muted-text: #9CA3AF;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--theme-transition), color var(--theme-transition);
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: var(--accent-color);
+    color: #FFFFFF;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    transition: background-color var(--theme-transition);
+}
+
+.theme-toggle:hover {
+    background-color: #2563eb;
+}
+
+.theme-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform var(--theme-transition);
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn {
+    color: var(--button-text) !important;
+    background-color: var(--button-bg) !important;
+}
+
+.btn:hover {
+    background-color: var(--button-hover) !important;
+}
+
+.shuffle-button {
+    width: 80%;
+    margin: 15px auto;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    transition: all var(--theme-transition);
+    display: block;
+}
+
+.shuffle-button:hover {
+    background-color: var(--button-hover);
+    transform: scale(0.98);
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: var(--card-bg);
+    transition: background-color var(--theme-transition);
+}
+
+.pin-display {
+    background-color: var(--button-bg);
+    padding: 15px;
+    border-radius: 8px;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 24px;
+    letter-spacing: 5px;
+    color: var(--text-color);
+    transition: background-color var(--theme-transition), color var(--theme-transition);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.keypad-button {
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    transition: all var(--theme-transition);
+}
+
+.keypad-button:hover {
+    background-color: var(--button-hover);
+    transform: scale(0.98);
+}
+
+.keypad-button:active {
+    transform: scale(0.95);
+}
+
+.timer-container {
+    margin: 20px 0;
+}
+
+.progress {
+    height: 6px;
+    background-color: var(--button-bg);
+    transition: background-color var(--theme-transition);
+}
+
+.progress-bar {
+    background-color: var(--accent-color);
+    transition: width 1s linear, background-color var(--theme-transition);
+}
+
+#statusMessage {
+    min-height: 24px;
+    color: var(--text-color);
+}
+
+.success-message {
+    color: var(--success-color) !important;
+}
+
+.error-message {
+    color: var(--error-color) !important;
+}
+
+.attempts-counter {
+    text-align: center;
+    margin: 10px 0;
+    color: var(--text-color);
+}
+
+.text-muted {
+    color: var(--muted-text) !important;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    color: var(--text-color);
+    transition: color var(--theme-transition);
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-align: center;
+    transition: background-color var(--theme-transition), color var(--theme-transition);
+}
+
+.popup.show {
+    display: block;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
